@@ -1,0 +1,445 @@
+// HEADER TOP
+.location,
+.hamburger-location
+	color: $blue
+	background: none
+	border: 0
+	&::before
+		content: ""
+		display: inline-block
+		margin-right: 10px
+		width: 12px
+		height: 16px
+		vertical-align: sub
+		background: url(../img/dist/location-blue.svg) 50% no-repeat
+
+.hamburger-location
+	padding-left: 42px
+	&__country
+		text-decoration: underline
+	&__icon
+		padding-right: 7px
+
+.info-menu
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	&__item
+		margin-right: 32px
+		&:last-child
+			margin-right: 0
+
+.login
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+
+// HEADER BOTTOM
+.logotype
+    display: inline-block
+
+.hamburger
+	display: block
+	width: 100%
+	height: 100%
+	&.active
+		.hamburger__inner:first-child
+			width: 0
+			opacity: 0
+		.hamburger__inner:nth-child(2)
+			position: absolute
+			margin: 0
+			width: 28px
+			transform: rotate(-45deg)
+		.hamburger__inner:last-child
+			width: 28px
+			transform: rotate(45deg)
+	&__inner
+		display: block
+		height: 2px
+		border-radius: 10px
+		background: $red
+		transition: all 0.5s ease
+		&:first-child
+			width: 23px
+		&:nth-child(2)
+			margin: 6px 0
+			width: 28px
+		&:last-child
+			width: 17px
+	&-wrapper
+        position: fixed
+        top: 70px
+        bottom: 0
+        left: -100%
+        z-index: 100
+        overflow-y: auto
+        width: 270px
+        background: $primary-background
+        border-right: 1px solid rgba(56,125,191,0.05)
+        transition: all 0.5s ease
+        &.active
+            left: 0
+	&-main,
+	&-submain
+		margin-bottom: 75px
+	&-submain
+		margin-top: 30px
+	&-bottom
+        position: fixed
+        bottom: 0
+        width: 269px
+	&-heading
+		display: block
+		padding-left: 42px
+		margin-top: 30px
+		margin-bottom: 20px
+		font-size: 14px
+		opacity: 0.25
+
+.mobile-menu,
+.mobile-categories
+	&__item
+		display: block
+		margin-right: 29px
+		margin-bottom: 10px
+		text-decoration: none
+		&:last-child
+			margin-bottom: 0
+	&__link
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 13px 0px 13px 42px
+		font-weight: 500
+		font-size: 14px
+		color: $dark-blue
+		border-radius: 0 50px 50px 0
+		&:hover
+			color: $dark-blue
+			background: rgba(56,125,191,0.1)
+
+.mobile-menu
+	&__icon
+		margin-right: 10px
+		opacity: 0.2
+
+.mobile-category
+	display: none
+
+.mobile-category__back
+	margin-left: 42px
+	margin-bottom: 40px
+	font-size: 14px
+	font-weight: 500
+	&::before
+		content: ""
+		display: inline-block
+		vertical-align: middle
+		margin-right: 15px
+		width: 9px
+		height: 16px
+		background: url(../img/dist/arrow-left-red.svg) 50% no-repeat
+
+.mobile-categories
+	&_active
+		display: block
+
+.hamburger-info-menu
+	padding-left: 42px
+	&__item
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+
+.hamburger-office
+    display: block
+    padding: 20px 0
+    text-align: center
+    color: $primary-color
+    background: $primary-background
+    border-top: 1px solid rgba(56,125,191,0.05)
+    &:hover
+        color: $primary-color
+    &__icon
+        margin-right: 15px
+        font-size: 17px
+        color: $blue
+
+.catalog-toggle
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	justify-content: center
+	align-items: center
+	font-size: 14px
+	text-align: center
+	color: $white
+	background: $red
+	border-radius: 5px
+	&_active
+		color: $red
+		background: transparent
+		box-shadow: 0 0 0 1px $red inset, 0 0 0 5px $white inset
+	&__icon
+		margin-right: 8px
+
+.directory
+    display: none
+    position: absolute
+    top: 100%
+    left: 15px
+    padding-top: 30px
+    width: 160px
+    height: 360px
+    background: $primary-background
+    border-radius: 0 0 0 5px
+    z-index: 100
+    &_active
+        display: block
+    &__link
+        display: inline-block
+        padding: 13px 20px
+        width: 100%
+        font-size: 14px
+        font-weight: 500
+        color: $primary-color
+        &_active
+            background: rgba(28,67,106,0.1)
+        &:hover
+            color: $primary-color
+            background: rgba(28,67,106,0.1)
+
+.directory__item:hover > .categories
+	display: flex
+
+.categories
+	display: none
+	flex-direction: column
+	flex-wrap: wrap
+	position: absolute
+	top: 0
+	left: 100%
+	padding-top: 43px
+	padding-left: 30px
+	height: 360px
+	background: $primary-background
+	border-radius: 0 0 5px 0
+	box-shadow: 0 10px 50px rgba(0,0,0,0.01)
+	z-index: 100
+	&_active
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+	&__item
+		padding-bottom: 14px
+		width: 50%
+	&__link
+		text-decoration: underline
+
+.form-search
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    width: 100%
+    &__input
+        padding: 17px 20px
+        width: 75%
+        color: $dark-blue
+        opacity: 0.5
+        background: rgba(28,67,106,0.1)
+        border: none
+        border-radius: 5px 0 0 5px
+        transition: all 0.5s ease
+        &:focus
+            color: $primary-color
+            opacity: 1
+            background: $primary-background
+            box-shadow: 0 0 0 2px $blue inset
+    &__button
+        width: 25%
+        color: $white
+        text-align: center
+        background: $blue
+        border: none
+        border-radius: 0 5px 5px 0
+        transition: all 0.5s ease
+        &:hover
+            background: #2A6399
+
+.icon-wrapper
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	align-items: center
+    z-index: 1
+	background: $primary-background
+
+.mobile-search
+    display: none
+    z-index: 99
+    margin-top: 19px
+    background: $primary-background
+    border-bottom: 1px solid $black-line
+    &__wrapper
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__control
+        padding: 20px 20px 20px 0
+        width: 100%
+        background: $primary-background
+        border: none
+        outline: none
+        transition: all 0.5s ease
+    &__btn
+        padding: 8px 14px
+        color: $white
+        background: $blue
+        border: none
+        border-radius: 3px
+        &:hover
+            background: #2A6399
+        i
+            font-size: 15px
+
+.shopping-cart
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    align-items: center
+    background: $primary-background
+    border-radius: 5px
+    &:hover
+        background: rgba(0,0,0,0.03)
+    &__icon
+        color: $red
+    &__details
+        text-align: left
+    &__basket
+        display: block
+        font-size: 14px
+        font-weight: bold
+        line-height: 100%
+        color: $dark-blue
+        &:hover
+            color: $dark-blue
+    &__goods
+        display: block
+        line-height: 100%
+        margin-top: 5px
+
+// MEDIA QUERIES
+@include media-breakpoint-up(xl)
+    .logotype
+        margin-top: 5px
+
+    .catalog-toggle
+        padding: 16px 38px
+        width: 100%
+
+    .categories
+        width: 570px
+
+    .form-search__button
+        padding: 17px 40px
+
+    .shopping-cart
+        padding: 10px 20px
+
+@include media-breakpoint-up(lg)
+    .header
+        &__top
+            display: -webkit-flex
+            display: -ms-flex
+            display: flex
+            align-items: center
+            height: 40px
+            border-bottom: 1px solid $black-line
+        &__bottom
+            padding-top: 30px
+
+    .header-fixed
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        z-index: 100
+        padding: 13px 0 17px 0
+        background: $white
+        border-bottom: 1px solid $black-line
+        .shopping-cart
+            background: $white
+            &:hover
+                background: rgba(0,0,0,0.03)
+
+    .login
+        justify-content: flex-end
+
+    .login__registration
+        margin-right: 20px
+
+    .shopping-cart__icon
+        padding-right: 14px
+
+    .search,
+    .search__icon,
+    .mobile-search
+        display: none
+
+    .shopping-cart__icon
+        font-size: 24px
+
+    .shopping-cart__goods
+        font-size: 12px
+        color: $blue
+        opacity: 0.5
+
+@include media-breakpoint-only(lg)
+    .logotype
+        margin-top: 12px
+
+    .catalog-toggle
+        padding: 16px 30px
+        width: auto
+
+    .categories
+        width: 450px
+
+    .form-search__button
+        padding: 17px 20px
+
+    .shopping-cart
+        margin-top: 7px
+
+@include media-breakpoint-down(md)
+	.header
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 100
+        padding: 21px 0 18px 0
+        width: 100%
+        height: 70px
+        background: $primary-background
+        border-bottom: 1px solid rgba(56,125,191,0.05)
+
+	.logotype__img
+		height: 30px
+
+	.search
+		margin-right: 20px
+
+	.search__icon
+		font-size: 17px
+		color: $red
+
+	.shopping-cart__icon
+		font-size: 17px
+
+	.shopping-cart__details
+		display: none

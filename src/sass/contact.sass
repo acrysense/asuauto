@@ -1,0 +1,41 @@
+@import "config" // Always at the beginning
+@import "header"
+@import "breadcrumb"
+@import "footer"
+@import "modal"
+
+// STYLES OF THE MAIN SECTION
+.contact
+    &__wrapper
+        margin-top: 10px
+    &__heading
+        margin-bottom: 15px
+    &__item
+        margin-bottom: 10px
+        &:last-child
+            margin-bottom: 0
+    &__link
+        color: $primary-color
+        &:hover
+            color: $primary-color
+
+// MEDIA QUERIES
+@include media-breakpoint-up(xl)
+    .heading__description
+        font-size: 16px
+
+@include media-breakpoint-only(lg)
+    .heading__description
+        font-size: 15px
+
+@include media-breakpoint-up(md)
+    .contact__wrapper
+        margin-bottom: 50px
+
+@include media-breakpoint-down(md)
+    .main
+        margin-top: 70px
+
+@include media-breakpoint-down(sm)
+    .map
+        margin-top: 40px

@@ -1,0 +1,142 @@
+.articles
+	padding: 50px
+	background: rgba(28,67,106,0.03)
+
+.img-article
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 30px 24px
+    height: 333px
+    overflow: hidden
+    color: $white
+    background: url(../img/dist/inside-line.png) 50% no-repeat, linear-gradient(0deg, rgba(28,67,106,0.75), rgba(28,67,106,0.75)), url(../img/dist/article-bg.jpg)
+    background-size: cover
+    border-radius: 3px
+    &:hover
+        color: $white
+
+.article
+    &__img
+        border-radius: 3px
+    &__content
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    &__top
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 15px
+        font-size: 13px
+        color: $dark-blue
+        opacity: 0.5
+        &_white
+            color: $white
+    &__main_img
+        margin-top: 169px
+        overflow: hidden
+    &__title
+        display: block
+        margin-bottom: 15px
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+        font-size: 16px
+        font-weight: 600
+        color: $primary-color
+        &:hover
+            color: $primary-color
+        &_white
+            color: $white
+            &:hover
+                color: $white
+    &__description
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+        font-size: 13px
+    &__more
+        margin-top: 20px
+        font-weight: 600
+        color: $blue
+        &:hover
+            text-decoration: underline
+
+.big-article
+    max-height: 333px
+    &__preview
+        display: inline-block
+        margin-bottom: 15px
+        width: 100%
+    &__img
+        width: 100%
+        height: 180px
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+    &__content
+        width: 100%
+
+.small-article
+    margin-top: 45px
+    &__preview
+        display: inline-block
+    &__img
+        width: 100%
+        height: 150px
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+
+// MEDIA QUERIES
+@include media-breakpoint-up(lg)
+    .small-article
+        &__preview
+            width: 50%
+        &__content
+            width: 50%
+    
+@include media-breakpoint-up(sm)
+	.small-article
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		&__preview
+			margin-right: 30px
+
+	.article
+		&__views_text
+			margin-left: 5px
+		&__icon-view
+			display: none
+		&__preview
+
+@include media-breakpoint-between(sm, md)
+    .small-article
+        &__preview
+            width: 40%
+        &__content
+            width: 60%
+
+@include media-breakpoint-down(md)
+	.big-article
+		margin-top: 30px
+
+@include media-breakpoint-down(xs)
+	.small-article
+		display: block
+		&__preview
+			margin-right: 0
+			margin-bottom: 10px
+			width: 100%
+		&__content
+			width: 100%
+
+	.article
+		&__views_text
+			display: none
+		&__icon-view
+			margin-left: 5px

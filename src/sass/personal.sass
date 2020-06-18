@@ -1,0 +1,92 @@
+@import "config" // Always at the beginning
+@import "breadcrumb"
+@import "header"
+@import "footer"
+@import "modal"
+
+// STYLES OF THE MAIN SECTION
+.empty-order,
+.empty-basket
+    padding: 70px 0
+    margin-bottom: 30px
+    text-align: center
+    color: $dark-blue
+    background: $white
+    border: 1px solid $black-line
+    border-radius: 5px
+
+.empty-order__title,
+.empty-basket__title
+    margin-bottom: 15px
+    opacity: 0.15
+
+.profile,
+.bonus
+    margin-bottom: 30px
+
+.profile
+    padding: 35px
+    background: $white
+    border: 1px solid $black-line
+    border-radius: 5px
+    &__info
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 20px
+    &__details
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+    &__img
+        margin-right: 20px
+    &__name
+        margin-bottom: 5px
+        font-size: 16px
+    &__email
+        opacity: 0.5
+    &__settings
+        opacity: 0.3
+        &:hover
+            opacity: 0.5
+        &_icon
+            font-size: 18px
+    &__number
+        margin-bottom: 10px
+    &__number_title,
+    &__address_title
+        margin-right: 10px
+        opacity: 0.5
+
+.bonus
+    padding: 50px 50px 40px 50px
+    background: $white
+    border: 1px solid $blue
+    border-radius: 5px
+    &__heading
+        font-size: 18px
+        font-weight: 500
+        color: $dark-blue
+    &__amount
+        margin-top: 10px
+        color: $dark-blue
+    &__howtouse
+        display: inline-block
+        margin-top: 25px
+
+// MEDIA QUERIES
+@include media-breakpoint-up(lg)
+    .profile,
+    .bonus
+        height: 195px
+
+@include media-breakpoint-down(md)
+    .main
+        margin-top: 70px
+
+@include media-breakpoint-down(xs)
+    .profile__email
+        font-size: 12px

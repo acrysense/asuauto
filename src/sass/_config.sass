@@ -1,0 +1,187 @@
+// VARIABLES SECTION
+$montserrat: 'Montserrat', sans-serif // Montserrat font-family
+$primary-font-size: 13px // Body font-size
+$primary-color: #000 // Body text color
+$primary-background: #FCFCFC // Body background color
+$white: #FFF // White color
+$blue: #387DBF // Blue color
+$dark-blue: #1C436A // Dark blue color
+$red: #E73547 // Red color
+$black-line: rgba(0,0,0,0.05) // Light black line
+
+// FONTS LOAD SECTION
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap') // Google Fonts
+
+// IMPORT SECTION
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Bootstrap Grid
+@import 'node_modules/owl.carousel/src/scss/owl.carousel.scss' // Owl Carousel
+
+// COMMON DOCUMENT STYLES
+body
+    position: relative
+    overflow-x: hidden
+    font-family: $montserrat
+    font-size: $primary-font-size
+    color: $primary-color
+    background: $primary-background
+
+input,
+textarea
+	outline: none
+
+ul,
+ol,
+li
+    display: block
+    padding: 0
+    margin: 0
+    list-style: none
+
+h1, h2, h3, h4, h5, h6
+    margin: 0
+    font-weight: bold
+    line-height: 100%
+
+h1
+    font-size: 34px
+
+h2
+    font-size: 32px
+
+h3
+    font-size: 24px
+
+h4
+    font-size: 18px
+
+p
+    margin: 0
+
+a
+    color: $blue
+    transition: all 0.5s
+    &:hover
+        color: $blue
+        text-decoration: none
+
+button
+    padding: 0
+    text-align: center
+    background-color: transparent
+    border: 1px solid transparent
+    transition: all 0.5s
+    &:focus
+        outline: none
+
+label
+	margin-bottom: 0
+
+::-ms-clear
+	display: none
+	width: 0
+	height: 0
+
+::-ms-reveal
+	display: none
+	width: 0
+	height: 0
+
+::-webkit-search-decoration,
+::-webkit-search-cancel-button,
+::-webkit-search-results-button,
+::-webkit-search-results-decoration
+	display: none
+
+img
+    max-width: 100%
+
+.scroll-disabled
+    overflow: hidden
+
+.heading
+	margin-bottom: 30px
+	&__title
+		color: $dark-blue
+	&__description
+		margin-top: 25px
+
+.section-heading
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    justify-content: space-between
+    margin-bottom: 25px
+    color: $dark-blue
+    &__description
+        margin-top: 25px
+    &__list
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+    &__link
+        font-size: 14px
+        color: #000
+        text-decoration: underline
+        &:hover
+            color: #000
+        &_select
+            padding: 9px 30px
+            color: $blue
+            text-decoration: none
+            border: 1px solid $blue
+            border-radius: 5px
+            transition: all 0.5s ease
+            &:hover
+                color: $primary-background
+                background: $blue
+    &__more
+        font-size: 14px
+
+.overlay
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 99
+    &.active
+        display: block
+
+// MEDIA QUIERIES
+@include media-breakpoint-up(lg)
+    .section-heading
+        align-items: center
+        &__list
+            justify-content: flex-end
+        &__item:last-child
+            margin-right: 0
+
+@include media-breakpoint-up(sm)
+    .section-heading__item
+        margin-right: 22px
+
+@include media-breakpoint-between(sm, lg)
+	.section-heading
+		align-items: flex-start
+
+@include media-breakpoint-down(md)
+    .section-heading
+        flex-direction: column
+        &__list
+            margin-top: 20px
+        &__more
+            margin-top: 10px
+
+@include media-breakpoint-down(xs)
+    .section-heading
+        align-items: center
+        &__title
+            text-align: center
+        &__list
+            flex-direction: column
+        &__item
+            margin-top: 20px

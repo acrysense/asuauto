@@ -1,0 +1,502 @@
+@import "config" // Always at the beginning
+@import "breadcrumb"
+@import "header"
+@import "footer"
+@import "modal"
+
+// STYLES OF THE MAIN SECTION
+.filters-categories
+    padding: 30px
+    &__menu
+        margin-bottom: 40px
+    &__link
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+        color: $blue
+        cursor: pointer
+        &_active > .filters-categories__icon
+            transform: rotate(0deg)
+    &__icon
+        margin-right: 10px
+        font-size: 10px
+        color: #000
+        opacity: 0.25
+        transform: rotate(-90deg)
+        transition: all 0.5s ease
+
+.filters-subcategories
+    &__menu
+        margin-top: 15px
+        margin-left: 30px
+    &__item
+        margin-bottom: 10px
+        &:last-child
+            margin-bottom: 0
+    &__link
+        &::before
+            content: "—"
+            display: inline-block
+            margin-right: 5px
+
+.filters
+    &__wrapper
+        padding: 30px
+        border-bottom: 1px solid $black-line
+        &:last-child
+            border-bottom: 0
+    &__title
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        justify-content: space-between
+        align-items: center
+        cursor: pointer
+        transition: all 0.5s ease
+        &:hover
+            color: $dark-blue
+        &_icon
+            margin-right: 4px
+            transform: rotate(-90deg)
+            transition: all 0.5s ease
+        &_active > .filters__title_icon
+            transform: rotate(0deg)
+    &__container
+        margin-top: 20px
+    &__price
+        &-group
+            display: -webkit-flex
+            display: -ms-flex
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &-control
+            padding: 7px 12px
+            width: 80px
+            font-size: 13px
+            background: $white
+            border: 1px solid $black-line
+            border-radius: 3px
+        &-delimeter
+            margin: 0 5px
+            font-size: 11px
+    &__control
+        display: block
+        padding: 10px 15px 9px 15px
+        margin-bottom: 24px
+        width: 100%
+        font-size: 13px
+        color: $primary-color
+        background: $white
+        border: 1px solid $blue
+        border-radius: 5px
+    &__item
+        margin-bottom: 10px
+        &:last-child
+            margin-bottom: 0
+    &__checkbox
+        appearance: none
+        margin-right: 10px
+        width: 20px
+        height: 20px
+        vertical-align: middle
+        background: $white
+        border: 1px solid $black-line
+        border-radius: 3px
+        &:checked
+            background: $blue
+            background-image: url('../img/dist/check.svg')
+            background-size: auto 6px
+            background-repeat: no-repeat
+            background-position: center
+
+.brand-list
+    &__menu
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        justify-content: space-between
+    &__item
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 80px
+        background: $white
+        border: 1px solid $black-line
+        border-radius: 5px
+        transition: all 0.5s ease
+        &:hover
+            box-shadow: 0 5px 50px $black-line
+            transform: translateY(-2px)
+    &__link
+        padding: 20px
+
+.add-filters
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-top: 20px
+    &__wrapper
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+    &__opening
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+        padding: 12px 2.2em 12px 1.5em
+        margin-right: 10px
+        width: 100%
+        max-width: 100%
+        background-color: $white
+        border: 1px solid $black-line
+        border-radius: 5px
+        &_text
+            margin-left: 5px
+    &__title
+        margin-right: 15px
+    &__select
+        display: block
+        appearance: none
+        padding: 12px 2.2em 12px 1.5em
+        margin: 0
+        width: 100%
+        max-width: 100%
+        font-size: 13px
+        background-color: $white
+        background-image: url('../img/dist/select-arrow.svg'), linear-gradient(#FFF 0, #FFF 100%)
+        background-repeat: no-repeat, repeat
+        background-position: right 0.7em top 50%, 0 0
+        background-size: 0.65em auto, 100%
+        border: 1px solid $black-line
+        border-radius: 5px
+        &:focus
+            outline: none
+        &:disabled
+            background-image: url('../img/dist/select-arrow.svg'), linear-gradient(#FFF 0, #FFF 100%)
+        &:-ms-expand
+            display: none
+    &__btn
+        margin-right: 15px
+        opacity: 0.5
+        &:last-child
+            margin-right: 0
+        &_active
+            color: $blue
+            opacity: 1
+
+*[dir="rtl"] .add-filters__select
+    padding: 12px 15px 12px 20px
+    background-position: left 0.7em top 50%, 0 0
+
+.product
+    &__item
+        padding: 35px
+        margin-top: 20px
+        background: $white
+        border: 1px solid #F2F2F2
+        border-radius: 5px
+        transition: all 0.5s ease
+        &:hover
+            border: 1px solid rgba(0,0,0,0.2)
+        &_bestseller
+            &:hover
+                border: 1px solid $blue
+        &_new
+            &:hover
+                border: 1px solid $red
+    &__heading
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__title
+        font-size: 14px
+        color: $primary-color
+        &:hover
+            color: $primary-color
+    &__icons
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+    &__link
+        margin-right: 14px
+        &:last-child
+            margin-right: 0
+    &__icon
+        font-size: 18px
+        color: $dark-blue
+        opacity: 0.5
+        transition: all 0.5s ease
+        &:hover
+            opacity: 1
+    &__details
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+        margin-top: 10px
+    &__rating
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+        &_stars
+            display: inline-block
+            width: 80px
+            height: 14px
+            background: url('../img/dist/stars.svg') no-repeat
+            &-i
+                display: inline-block
+                height: 14px
+                background: url('../img/dist/stars-active.svg') no-repeat
+        &_1
+            width: 80%
+    &__reviews
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        margin-left: 16px
+        color: $primary-color
+        transition: all 0.5s ease
+        &_title
+            opacity: 0.5
+        &_link
+            margin-left: 10px
+            text-decoration: underline
+    &__about
+        margin-top: 15px
+    &__text
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        justify-content: space-between
+        margin-bottom: 7px
+        opacity: 0.5
+        &:last-child
+            margin-bottom: 0
+        &_delimiter
+            flex-grow: 1
+            margin: 1em 5px 0 5px
+            border-top: 1px dotted $primary-color
+            opacity: 0.1
+    &__price
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        &_old
+            color: $dark-blue
+            opacity: 0.5
+            text-decoration: line-through
+        &_new
+            margin-left: 15px
+            font-weight: bold
+            color: $dark-blue
+    &__buttons
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        flex-wrap: wrap
+    &__btn
+        padding: 12px 24px
+        text-align: center
+        color: $blue
+        border: 1px solid $blue
+        border-radius: 2px
+        &:hover
+            transform: scale(0.95)
+        &_icon
+            margin-right: 10px
+    &__cta
+        padding: 14px 30px 13px 30px
+        text-align: center
+        color: $white
+        background: $blue
+        border-radius: 2px
+        &:hover
+            color: $blue
+            background: transparent
+            box-shadow: 0 0 0 1px $blue inset, 0 0 0 5px $white inset
+
+// PRICE SLIDER
+.ui-slider
+    position: relative
+    margin-top: 20px
+    text-align: left
+    &-horizontal
+        height: 4px
+    &-range
+        display: block
+        position: absolute
+        top: 0
+        z-index: 1
+        height: 100%
+        background-position: 0 0
+        border: 0
+    &-handle
+        position: absolute
+        top: -6px
+        z-index: 2
+        margin-left: -6px
+        width: 16px
+        height: 16px
+        cursor: default
+        touch-action: none
+        &:focus
+            outline: none
+
+.ui-widget
+    &-content
+        background: #C4C4C4
+        border: none
+    &-header
+        background: $blue
+
+.ui-corner-all
+    border-radius: 10px
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active
+    background: $white
+    border: 1px solid $blue
+
+// MEDIA QUERIES
+@include media-breakpoint-up(xl)
+    .product__about
+        width: 48%
+
+@include media-breakpoint-up(lg)
+    .filters-categories
+        margin-bottom: 20px
+
+    .filters-categories,
+    .filters
+        background: $white
+        border: 1px solid $black-line
+        border-radius: 5px
+
+    .add-filters__wrapper:first-child
+        display: none
+
+@include media-breakpoint-up(md)
+    .brand-list__item
+            width: 195px
+
+    .product
+        &__item
+            display: -webkit-flex
+            display: -ms-flex
+            display: flex
+            align-items: center
+        &__img
+            margin-right: 23px
+            width: 20%
+        &__description
+            width: 80%
+        &__title
+            width: 65%
+        &__main
+            display: -webkit-flex
+            display: -ms-flex
+            display: flex
+            justify-content: space-between
+        &__order
+            margin-top: 3px
+
+@media (min-width: 768px) and (max-width: 1199px)
+    .brand-list__item
+        margin-right: 15px
+        &:last-child
+            margin-right: 0
+
+    .product__about
+        width: 38%
+
+@include media-breakpoint-up(sm)
+    .product
+        &__price
+            &_new
+                font-size: 18px
+        &__buttons
+            margin-top: 15px
+        &__cta
+            margin-left: 10px
+
+@include media-breakpoint-between(sm, lg) 
+    .all-filters
+        width: 40%
+
+@include media-breakpoint-down(md)
+    .main
+        margin-top: 70px
+
+    .all-filters
+        position: fixed
+        top: 70px
+        left: -100%
+        bottom: 0
+        overflow-y: auto
+        z-index: 100
+        background: $primary-background
+        border-right: 1px solid $black-line
+        transition: all 0.5s ease
+        &.active
+            left: 0
+
+    .filters-categories
+        border-bottom: 1px solid $black-line
+
+    .add-filters__title
+        display: none
+
+@include media-breakpoint-down(sm)
+    .brand-list
+        &__menu
+            flex-wrap: wrap
+        &__item
+            width: 48%
+            &:nth-child(1n+3)
+                margin-top: 15px
+
+    .product
+        &__img
+            display: block
+            margin-bottom: 25px
+            text-align: center
+        &__title
+            width: 75%
+        &__order
+            margin-top: 15px
+
+@include media-breakpoint-down(xs)    
+    .all-filters
+        width: 70%
+
+    .add-filters__wrapper:nth-child(1n+3)
+        display: none
+
+    .product
+        &__price
+            &_new
+                font-size: 20px
+        &__btn,
+        &__cta
+            margin-top: 15px
+            width: 100%

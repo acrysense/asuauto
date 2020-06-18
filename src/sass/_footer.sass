@@ -1,0 +1,159 @@
+.newsletter-form
+	&__wrapper
+		padding: 40px 60px
+		background: url(../img/dist/background-form.png), $red
+		transform: translateY(-50px)
+	&__body
+		margin-top: 40px
+	&__description
+		margin-top: 10px
+		line-height: 170%
+	&__input
+		padding: 17px 25px
+		margin-bottom: 15px
+		width: 100%
+		background: $white
+		border: 1px solid $black-line
+		border-radius: 5px
+	&__btn
+		padding: 15px 0
+		width: 100%
+		color: $white
+		background: transparent
+		border: 1px solid $white
+		border-radius: 5px
+		&:hover
+			color: $red
+			background: $white
+	&__footer
+		margin-top: 40px
+		font-size: 12px
+		font-weight: 500
+		opacity: 0.5
+
+.footer
+	margin-top: 100px
+	color: $white
+	&__newsletter
+		background: url(../img/dist/background-footer.png), #316CA6
+	&__content
+		padding-top: 50px
+		padding-bottom: 30px
+		background: #0F2338
+	&__heading
+		margin-bottom: 20px
+		&_link
+			color: $white
+			&:hover
+				color: $white
+	&__item
+		margin-bottom: 16px
+		&:last-child
+			margin-bottom: 0
+	&__link
+		display: inline-block
+		font-size: 14px
+		color: #FFF
+		opacity: 0.25
+		&:hover
+			color: $white
+	        opacity: 0.5
+	&__phonebtn
+        display: inline-block
+        margin-bottom: 20px
+        font-weight: bold
+        line-height: 100%
+        color: #FFF
+        background: none
+        border: none
+        &:hover
+            color: $red
+	&__terms
+		font-size: 10px
+		opacity: 0.25
+	&__cardlist
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		justify-content: flex-end
+		margin-top: 25px
+	&__cardlink
+		padding: 10px 0
+		margin-right: 10px
+		width: 80px
+		text-align: center
+		background: #0D1F32
+		border: 1px solid rgba(0,0,0,0.1)
+		border-radius: 3px
+		&:last-child
+			margin-right: 0
+		&:hover .footer__cardlogo
+			transform: scale(1.1)
+	&__cardlogo
+		transition: all 0.5s ease
+	&__bottom
+		padding: 30px 0
+		background: #0F2338
+		border-top: 1px solid rgba(255,255,255,0.1)
+	&__copyrights
+		opacity: 0.25
+
+// MEDIA QUERIES
+@include media-breakpoint-up(xl)
+	.newsletter-form__block
+		&:first-child
+			margin-top: 5px
+
+@include media-breakpoint-up(lg)
+	.newsletter-form
+		&__body
+			display: -webkit-flex
+			display: -ms-flex
+			display: flex
+			justify-content: space-between
+		&__block
+			width: 50%
+		&__description
+			width: 80%
+
+	.footer__phonebtn
+		font-size: 32px
+
+@include media-breakpoint-up(md)
+	.footer__wrapper_third
+		text-align: right
+
+@include media-breakpoint-only(md)
+	.footer__phonebtn
+		font-size: 28px
+
+@include media-breakpoint-only(sm)
+	.footer__wrapper_third
+		margin-top: 40px
+		text-align: center
+
+@include media-breakpoint-down(md)
+	.newsletter-form__block
+		&:last-child
+			margin-top: 20px
+
+@include media-breakpoint-down(sm)
+	.footer
+		&__phonebtn
+			font-size: 32px
+		&__cardlist
+			justify-content: center
+		&__copyrights
+			margin: 0 auto
+			text-align: center
+
+@include media-breakpoint-down(xs)
+	.newsletter-form__block
+		&:first-child
+			text-align: center
+	.footer
+		&__wrapper
+			margin-bottom: 50px
+			text-align: center
+		&__cardlist
+			justify-content: center

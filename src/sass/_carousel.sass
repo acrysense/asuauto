@@ -1,0 +1,240 @@
+.product
+    &__carousel
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        background: $white
+        border: 1px solid $black-line
+        border-radius: 5px
+    &__inner
+        padding: 30px 12px 30px 29px
+        border-right: 1px solid $black-line
+        &:focus
+            outline: none
+
+.product__name
+	margin-top: 16px
+	margin-bottom: 10px
+	opacity: 0.5
+
+.product__title
+	font-size: 15px
+	line-height: 150%
+	color: $primary-color
+	&:hover
+		color: $primary-color
+
+.product__rating
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	align-items: center
+	margin-top: 12px
+	&:hover > .product__rating_reviews
+	    opacity: 0.8
+
+.product__rating_stars
+	display: inline-block
+	width: 80px
+	height: 14px
+	background: url(../img/dist/stars.svg) no-repeat
+
+.product__rating_stars-i
+	display: inline-block
+	height: 14px
+	background: url(../img/dist/stars-active.svg) no-repeat
+
+.product__rating_1
+	width: 50%
+
+.product__rating_2
+	width: 100%
+
+.product__rating_3
+	width: 75%
+
+.product__rating_4
+	width: 25%
+
+.product__rating_reviews
+	margin-left: 16px
+	color: $primary-color
+	opacity: 0.5
+	transition: all 0.5s ease
+
+.product__price
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+    align-items: center
+	margin-top: 25px
+
+.product__price_new
+	margin-right: 15px
+	font-size: 18px
+	font-weight: bold
+
+.product__price_old
+	color: #808080
+	text-decoration: line-through
+
+.product__order
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	align-items: center
+	margin-top: 20px
+
+.product__btn
+	display: block
+	text-align: center
+	color: #FFF
+	background: $blue
+	border-radius: 3px
+	transition: all 0.5s ease
+	&:hover
+		color: $blue
+		background: $white
+		box-shadow: 0 0 0 1px $blue inset, 0 0 0 5px $white inset
+
+.product__icons
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+
+.product__link
+	margin-right: 18px
+	&:last-child
+		margin-right: 0
+
+.product__icon
+	font-size: 17px
+	color: $dark-blue
+	opacity: 0.5
+
+// CAROUSEL NAV
+.owl-prev span
+.owl-next span
+    display: none
+
+.owl-prev,
+.owl-next
+	position: absolute
+	top: 50%
+	margin-top: -20px
+	z-index: 1
+
+.item__carousel
+	.owl-prev,
+	.owl-next
+		margin-top: -15px
+	.owl-prev,
+	.owl-prev:hover,
+	.owl-prev:focus
+		left: 30px
+	.owl-next,
+	.owl-next:hover,
+	.owl-next:focus
+		right: 30px
+
+.fa-chevron-left,
+.fa-chevron-right
+	opacity: 0.15
+	transition: all 0.5s ease
+	&:hover
+		opacity: 1
+
+.chevron-big
+	font-size: 40px
+
+.chevron-small
+	font-size: 30px
+
+// MEDIA QUERIES
+@include media-breakpoint-up(lg)
+	.owl-prev,
+	.owl-prev:hover,
+	.owl-prev:focus
+		left: -5%
+
+	.owl-next,
+	.owl-next:hover,
+	.owl-next:focus
+        right: -5%
+
+@include media-breakpoint-only(lg)
+	.owl-prev,
+	.owl-prev:hover,
+	.owl-prev:focus
+        left: -4%
+
+	.owl-next,
+	.owl-next:hover,
+	.owl-next:focus
+        right: -4%
+
+@include media-breakpoint-only(md)
+	.owl-prev,
+	.owl-prev:hover,
+	.owl-prev:focus
+        left: -7%
+
+	.owl-next,
+	.owl-next:hover,
+	.owl-next:focus
+        right: -7%
+
+@include media-breakpoint-up(sm)
+	.product__btn
+		padding: 10px 20px
+
+	.product__icons
+		margin-left: 25px
+
+@include media-breakpoint-only(sm)
+	.owl-prev,
+	.owl-prev:hover,
+	.owl-prev:focus
+    	left: -8%
+
+	.owl-next,
+	.owl-next:hover,
+	.owl-next:focus
+        right: -8%
+
+@include media-breakpoint-down(md)
+	.product__body
+		text-align: center
+
+	.product__rating
+		justify-content: center
+
+	.product__rating_stars-i
+		float: left
+
+	.product__price,
+	.product__order
+		justify-content: center
+
+@include media-breakpoint-down(sm)
+	.product__img
+		margin: 0 auto
+
+	.product__btn
+		width: 60%
+
+@include media-breakpoint-down(xs)
+	.product__carousel
+		margin-left: auto
+		margin-right: auto
+
+	.product__btn
+		padding: 10px 8px
+
+	.product__icons
+		margin-left: 15px
+
+	.owl-carousel:not(.item__carousel)
+		.owl-next,
+		.owl-prev
+			display: none

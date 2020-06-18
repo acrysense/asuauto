@@ -1,0 +1,51 @@
+@import "config" // Always at the beginning
+@import "header"
+@import "breadcrumb"
+@import "footer"
+@import "modal"
+
+// STYLES OF THE MAIN SECTION
+.main
+    margin-bottom: 150px
+
+.empty-basket
+    &__wrapper
+        color: $dark-blue
+    &__icon
+        font-size: 100px
+    &__btn
+        display: inline-block
+        margin-top: 16px
+
+// MEDIA QUERIES
+@include media-breakpoint-up(lg)
+    .empty-basket
+        &__wrapper
+            padding: 136px 289px
+            margin-top: 15px
+            background: $white
+            border: 1px solid $black-line
+            border-radius: 5px
+        &__body
+            display: -webkit-flex
+            display: -ms-flex
+            display: flex
+            justify-content: center
+            align-items: center
+        &__icon
+            margin-right: 50px
+            color: $red
+
+@include media-breakpoint-down(md)
+    .main
+        margin-top: 70px
+
+    .empty-basket
+        &__wrapper
+            margin-top: 20px
+        &__body
+            text-align: center
+        &__icon
+            margin-bottom: 40px
+            color: $dark-blue
+            opacity: 0.15

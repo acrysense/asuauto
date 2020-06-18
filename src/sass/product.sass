@@ -1,0 +1,442 @@
+@import "config" // Always at the beginning
+@import "breadcrumb"
+@import "header"
+@import "carousel"
+@import "articles"
+@import "footer"
+@import "modal"
+
+// STYLES OF THE MAIN SECTION
+.item__carousel
+    padding: 50px 70px
+    background: $white
+    border: 1px solid $black-line
+    border-radius: 5px
+
+.small-item__carousel
+    padding: 20px 42px
+    margin-top: 10px
+    background: $white
+    border: 1px solid $black-line
+    border-radius: 5px
+
+.small-item__inner
+    border: 1px solid $black-line
+
+.data
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+    margin-top: 20px
+    &__control
+        padding: 20px 25px
+        background: $white
+        border: 1px solid $black-line
+        border-radius: 5px
+    &__btn
+        text-align: center
+        color: $white
+        background: $blue
+        border-radius: 5px
+        &_icon
+            margin-right: 7px
+        &:hover
+            color: $blue
+            background: transparent
+            box-shadow: 0 0 0 1px $blue inset, 0 0 0 5px $white inset
+    &__help
+        margin-top: 20px
+        opacity: 0.25
+
+.body
+    background: $white
+    border: 1px solid $black-line
+    border-radius: 5px
+    &__topping
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        justify-content: space-between
+    &__banners
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+    &__banner
+        padding: 6px 20px
+        margin-right: 10px
+        border-radius: 4px
+        &:last-child
+            margin-right: 0
+        &_bestseller
+            color: $dark-blue
+            border: 1px solid $dark-blue
+            &:hover
+                color: $dark-blue
+        &_new
+            color: $red
+            border: 1px solid $red
+            &:hover
+                color: $red
+    &__icons
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+    &__link
+        margin-right: 14px
+        &:last-child
+            margin-right: 0
+    &__icon
+        font-size: 18px
+        color: $dark-blue
+        opacity: 0.5
+        transition: all 0.5s ease
+    &__title
+        margin-top: 20px
+        line-height: 140%
+        color: $dark-blue
+    &__main
+        margin-top: 15px
+    &__wrapper
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        &:nth-child(2)
+            margin-top: 20px
+    &__heading
+        margin-bottom: 10px
+        opacity: 0.5
+    &__order
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+        &_link
+            margin-left: 10px
+        &_icon
+            font-size: 18px
+            color: $dark-blue
+            opacity: 0.5
+    &__group
+        padding: 15px
+        text-align: center
+        border: 1px solid $blue
+        border-radius: 3px
+    &__button
+        &_minus
+            color: $red
+        &_plus
+            color: $blue
+    &__amount
+        appearance: none
+        text-align: center
+        background: none
+        border: none
+    &__price
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+        height: 51px
+        &_new
+            font-size: 24px
+            font-weight: bold
+        &_old
+            margin-left: 20px
+            font-size: 16px
+            color: #55728F
+            text-decoration: line-through
+            opacity: 0.5
+    &__vendor-code__title
+        margin-right: 10px
+        opacity: 0.5
+    &__details
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+    &__rating
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+        &_stars
+            display: inline-block
+            width: 80px
+            height: 14px
+            background: url(../img/dist/stars.svg) no-repeat
+            &-i
+                display: inline-block
+                height: 14px
+                background: url(../img/dist/stars-active.svg) no-repeat
+        &_1
+            width: 80%
+    &__reviews
+        margin-left: 10px
+        text-decoration: underline
+    &__bottom
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+    &__btn
+        text-align: center
+        color: $white
+        border-radius: 4px
+        &_blue
+            background: $blue
+            &:hover
+                transform: scale(0.98)
+        &_red
+            background: $red
+            &:hover
+                transform: scale(0.98)
+        &_icon
+            margin-right: 7px
+        &_text::before
+            content: ""
+            display: inline-block
+            margin-right: 7px
+            width: 18px
+            height: 18px
+            vertical-align: bottom
+            background: url(../img/dist/installment-plan.svg)
+            background-repeat: no-repeat
+            background-position: center
+
+.tabs
+    &__caption
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+        margin: 20px 0
+    &__item
+        text-align: center
+        border: 1px solid $black-line
+        border-radius: 4px
+        cursor: pointer
+        &.active
+            border: 1px solid $blue
+    &__content
+        display: none
+        &.active
+            display: block
+
+.tab-content
+    &__pane:not(.active)
+        display: none
+    &__wrapper
+        padding: 40px 50px
+        background: $white
+        border: 1px solid $black-line
+        border-radius: 5px
+    &__specification
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        justify-content: space-between
+        margin-bottom: 7px
+        font-size: 14px
+        &:last-child
+            margin-bottom: 0
+        &_delimiter
+            flex-grow: 1
+            margin: 0.9em 5px 0 5px
+            border-top: 1px dashed #000
+    &__reviews-none
+        opacity: 0.5
+    &__leave-feedback
+        margin-top: 25px
+    &__title
+        margin-bottom: 15px
+
+.tab-data
+    &__group
+        label
+            opacity: 0.5
+    &__control
+        margin: 10px 0
+        padding: 15px 20px
+        width: 100%
+        border: 1px solid $black-line
+        border-radius: 3px
+        transition: all 0.5s ease
+        &:focus
+            border: 1px solid rgba(#000, 0.2)
+    &__textarea
+        min-height: 100px
+        resize: none
+    &__bottom
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+    &__btn
+        padding: 16px 30px 18px 30px
+        text-align: center
+        color: $white
+        background: $blue
+        border: none
+        border-radius: 4px
+        transition: all 0.5s ease
+        &:hover
+            color: $blue
+            background: transparent
+            box-shadow: 0 0 0 1px $blue inset, 0 0 0 5px $white inset
+
+// STYLE SECTIONS
+.best-deals
+    margin-top: 100px
+
+.articles
+	margin-top: 50px
+
+// MEDIA QUERIES
+@include media-breakpoint-down(xl)
+    .data
+        &__btn
+            padding: 20px 42px
+
+    .body
+        &__amount
+            margin: 0 64px
+        &__btn
+            &_blue
+                padding: 16px 30px 18px 30px
+            &_red
+                padding: 16px 30px
+
+    .tabs
+        &__item
+            padding: 16px 3rem 17px 3rem
+
+@include media-breakpoint-only(lg)
+    .data
+        &__btn
+            padding: 20px 28px
+
+    .body
+        &__amount
+            margin: 0 20px
+        &__btn
+            &_blue
+                padding: 16px 22px 18px 22px
+            &_red
+                padding: 16px 22px
+
+    .tabs
+        &__item
+            padding: 16px 2rem 17px 2rem
+
+@include media-breakpoint-only(md)
+    .body
+        &__amount
+            margin: 0 64px
+        &__btn
+            &_blue
+                padding: 16px 30px 18px 30px
+            &_red
+                padding: 16px 30px
+
+    .tabs
+        &__item
+            padding: 16px 3rem 17px 3rem
+
+@include media-breakpoint-up(sm)
+    .data
+        &__control
+            width: 60%
+        &__btn
+            margin-left: 10px
+
+    .body
+        padding: 40px 48px 62px 48px
+        &__group
+            margin-right: 30px
+        &__amount
+            width: 40px
+        &__details
+            margin-left: 30px
+        &__bottom
+            margin-top: 30px
+        &__btn
+            margin-right: 20px
+
+    .tab-data
+        &__btn
+            width: 35%
+
+@include media-breakpoint-down(md)
+    .main
+        margin-top: 70px
+
+    .data
+        &__btn
+            padding: 20px 42px
+        &__help
+            margin-bottom: 25px
+
+@include media-breakpoint-down(sm)
+    .body
+        &__amount
+            margin: 0 8px
+        &__btn
+            &_blue
+                padding: 14px 12px 15px 12px
+            &_red
+                padding: 14px 12px
+
+    .tabs
+        &__item
+            padding: 16px 1.4rem 17px 1.4rem
+
+@include media-breakpoint-down(xs)
+    .data
+        &__control
+            width: 100%
+        &__btn
+            margin-top: 10px
+            width: 100%
+
+    .body
+        padding: 30px 28px 42px 28px
+        &__banner,
+        &__icons
+            margin-top: 10px
+        &__icons
+            margin-left: 10px
+        &__content
+            margin-top: 20px
+        &__content,
+        &__group
+            width: 100%
+        &__vendor-code
+            margin-right: 10px
+        &__vendor-code,
+        &__details
+            margin-top: 5px
+        &__btn
+            margin-top: 20px
+            &_blue
+                margin-right: 10px
+        &__order_link
+            margin-top: 20px
+
+    .tabs
+        &__item
+            margin-bottom: 15px
+            width: 100%
+            &:last-child
+                margin-bottom: 0
+
+    .tab-content
+        &__description
+            text-align: center
